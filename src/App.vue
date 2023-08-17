@@ -34,7 +34,7 @@ let load3DTitles = () => {
     const tileset = new Cesium.Cesium3DTileset({
       url: tilesetUrls[i],
       maximumScreenSpaceError: 1,
-      maximumNumberOfLoadedTiles: 1000
+      // maximumNumberOfLoadedTiles: 1000
     })
 
     tileset.readyPromise.then((tileset) => {
@@ -48,7 +48,7 @@ let load3DTitles = () => {
 }
 
 // 调整模型位置
-let adjustModelHeight = (tileset, height) => {
+let adjustModelHeight = (tileset: any, height: number) => {
   // 显示3D Tiles包围盒
   // tileset.debugShowContentBoundingVolume = true
 
