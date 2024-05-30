@@ -19,9 +19,9 @@ export function useUav(viewer: cesium.Viewer, uri: string) {
     [DIRECTION_ENUM.SPEED_DOWN]: false,
   }
   const flightParams = reactive<FlightParamsType>({
-    lat: 35.08031,
-    lng: 119.28325,
-    altitude: 80,
+    lat: 34.59836,
+    lng: 119.216008,
+    altitude: 800,
     heading: 0,
     pitch: 0,
     roll: 0,
@@ -30,7 +30,11 @@ export function useUav(viewer: cesium.Viewer, uri: string) {
   })
   //加载飞行器模型
   const lodaFlightModel = () => {
-    const position = cesium.Cartesian3.fromDegrees(flightParams.lng, flightParams.lat, 80)
+    const position = cesium.Cartesian3.fromDegrees(
+      flightParams.lng,
+      flightParams.lat,
+      80
+    )
     const hpr = new cesium.HeadingPitchRoll()
     const orientation = cesium.Transforms.headingPitchRollQuaternion(
       position,
